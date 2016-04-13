@@ -14,57 +14,65 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-12">
-            <h1>Joker Service JavaScript SDK Example</h1>
+        <h1>Joker Service JavaScript SDK Example</h1>
+    </div>
 
-            <div class="col-md-8">
-                <ul class="nav nav-tabs __web-inspector-hide-shortcut__">
-                    <li class="active"><a data-toggle="pill" href="#get-joker-offer">Get new joker offer</a></li>
-                    <li class=""><a data-toggle="pill" href="#current-joker">Get current joker offer</a></li>
-                    <li class=""><a data-toggle="pill" href="#accept-joker">Accept joker</a></li>
-                    <li class=""><a data-toggle="pill" href="#reject-joker">Reject joker</a></li>
-                    <li><a data-toggle="pill" href="#complete-order">Complete order</a></li>
-                </ul>
-                <div class="tab-content">
-                    <div id="get-joker-offer" class="tab-pane fade in active">
-                        <div class="row top-buffer">
-                            <div class="col-md-12">
-                                <form class="form-get-joker-offer">
-                                    <div class="form-group">
-                                        <label>Restaurant Unique Keys: ["Id","Id"] </label>
-                                        <input type="text" id="get-joker-offer-restaurant-unique-keys"
-                                               class="form-control"
-                                               value="">
-                                    </div>
-                                    <input type="submit" class="btn btn-success pull-right" value="Get Joker Offer">
-                                </form>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="col-md-6">
-                                    <label>Response Message:</label>
-                                    <span class="response-message"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Offer Id:</label>
-                                    <span class="offer-id"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Remaining Duration:</label>
-                                    <span class="remaining-duration"></span>
-                                </div>
-                                <div class="col-md-6">
-                                    <label>Expire Date Utc :</label>
-                                    <span class="expire-date-utc"></span>
-                                </div>
-                                <div class="col-md-12">
-                                    <label>Offer Items:</label>
+    <div class="col-md-8">
+        <ul class="nav nav-tabs __web-inspector-hide-shortcut__">
+            <li class="active"><a data-toggle="pill" href="#get-joker-offer">Get new joker offer</a></li>
+            <li class=""><a data-toggle="pill" href="#current-joker">Get current joker offer</a></li>
+            <li class=""><a data-toggle="pill" href="#accept-joker">Accept joker</a></li>
+            <li class=""><a data-toggle="pill" href="#reject-joker">Reject joker</a></li>
+            <li><a data-toggle="pill" href="#complete-order">Complete order</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <div id="get-joker-offer" class="tab-pane fade in active">
+                <form class="form-get-joker-offer">
+                    <div class="form-group">
+                        <label class="col-sm-3 control-label">Restaurant Unique Keys:
+                            ["Id","Id"] </label>
+
+                        <div class="col-sm-9">
+                            <input type="text" id="get-joker-offer-restaurant-unique-keys"
+                                   class="form-control"
+                                   value=""/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-success pull-right">Get Joker Offer</button>
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Response Message:</label>
+                        <span class="response-message"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Offer Id:</label>
+                        <span class="offer-id"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Remaining Duration:</label>
+                        <span class="remaining-duration"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Expire Date Utc :</label>
+                        <span class="expire-date-utc"></span>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>Offer Items:</label>
                             <span>
                                 <table class="table table-responsive table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Reservation Code</th>
                                         <th>Reservation Status</th>
-                                        <th>Restauant Name</th>
+                                        <th>Restaurant Name</th>
                                         <th>Unique Key</th>
                                         <th>Actions</th>
                                     </tr>
@@ -74,42 +82,48 @@
                                     </tbody>
                                 </table>
                             </span>
-                                </div>
-                            </div>
-                        </div>
                     </div>
-                    <div id="current-joker" class="tab-pane fade in">
-                        <div class="col-md-12">
-                            <form class="form-get-current-joker-offer">
+                </div>
+
+            </div>
+            <div id="current-joker" class="tab-pane fade in">
+                <div class="col-md-12">
+                    <form class="form-get-current-joker-offer">
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
                                 <input type="submit" class="btn btn-success pull-right" value="Get Current Joker Offer">
-                            </form>
+                            </div>
                         </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <label>Response Message:</label>
-                                <span class="response-message"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Offer Id:</label>
-                                <span class="offer-id"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Remaining Duration:</label>
-                                <span class="remaining-duration"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Expire Date Utc :</label>
-                                <span class="expire-date-utc"></span>
-                            </div>
-                            <div class="col-md-12">
-                                <label>Offer Items:</label>
+
+                    </form>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label>Response Message:</label>
+                        <span class="response-message"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Offer Id:</label>
+                        <span class="offer-id"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Remaining Duration:</label>
+                        <span class="remaining-duration"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Expire Date Utc :</label>
+                        <span class="expire-date-utc"></span>
+                    </div>
+
+                    <div class="col-md-12">
+                        <label>Offer Items:</label>
                             <span>
                                 <table class="table table-responsive table-bordered">
                                     <thead>
                                     <tr>
                                         <th>Reservation Code</th>
                                         <th>Reservation Status</th>
-                                        <th>Restauant Name</th>
+                                        <th>Restaurant Name</th>
                                         <th>Unique Key</th>
                                         <th>Actions</th>
                                     </tr>
@@ -119,106 +133,103 @@
                                     </tbody>
                                 </table>
                             </span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div id="accept-joker" class="tab-pane fade in">
-                        <div class="col-md-12">
-                            <form class="form-accept-joker-offer">
-                                <div class="form-group">
-                                    <label>Offer Id: </label>
-                                    <input type="text" id="accept-joker-offer-id" class="form-control" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Reservation Code: </label>
-                                    <input type="text" id="accept-joker-offer-reservation-code" class="form-control"
-                                           value="">
-                                </div>
-                                <input type="submit" class="btn btn-success pull-right" value="Accept Order">
-                            </form>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <label>Response Message:</label>
-                                <span class="response-message"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Result:</label>
-                                <span class="result"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="reject-joker" class="tab-pane fade in">
-                        <div class="col-md-12">
-                            <form class="form-reject-joker-offer">
-                                <div class="form-group">
-                                    <label>Offer Id: </label>
-                                    <input type="text" id="reject-joker-offer-id" class="form-control" value="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Reservation Code: </label>
-                                    <input type="text" id="reject-joker-offer-reservation-code" class="form-control"
-                                           value="">
-                                </div>
-                                <input type="submit" class="btn btn-success pull-right" value="Reject Offer">
-                            </form>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <label>Response Message:</label>
-                                <span class="response-message"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Result:</label>
-                                <span class="result"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div id="complete-order" class="tab-pane fade in">
-                        <div class="col-md-12">
-                            <form class="form-complete-joker-offer">
-                                <div class="form-group">
-                                    <label>Restaurant Unique Key: </label>
-                                    <input type="text" id="complete-order-restaurant-unique-key" class="form-control"
-                                           value="">
-                                </div>
-                                <div class="form-group">
-                                    <label>Order Unique Key: </label>
-                                    <input type="text" id="complete-order-order-unique-key" class="form-control"
-                                           value="">
-                                </div>
-                                <input type="submit" class="btn btn-success pull-right" value="Complete Order">
-                            </form>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="col-md-6">
-                                <label>Response Message:</label>
-                                <span class="response-message"></span>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Result:</label>
-                                <span class="result"></span>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
-                <h4>Default Parameters</h4>
 
+            <div id="accept-joker" class="tab-pane fade in">
                 <div class="col-md-12">
-                    <div class="control-group">
+                    <form class="form-accept-joker-offer">
                         <div class="form-group">
-                            <label>Token: </label>
-                            <input type="text" id="token" class="form-control"
-                                   value="eyJBcGlLZXkiOiJ5c19hcGkiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJVc2VyTmFtZSI6Im1lcnRvenRla2luIiwiQ2hhbm5lbE5hbWUiOiJZUy5NVkMiLCJDdWx0dXJlIjoidHItVFIiLCJUaW1lWm9uZSI6IkV1cm9wZS9CZXJsaW4iLCJleHAiOiIxNDY0NTAyMDAyIn0.ZaHwtUfUsfyS3AEmwLf-NRT-5i3SzuPDsyhHAGgsJpc">
+                            <label>Offer Id: </label>
+                            <input type="text" id="accept-joker-offer-id" class="form-control" value="">
                         </div>
+                        <div class="form-group">
+                            <label>Reservation Code: </label>
+                            <input type="text" id="accept-joker-offer-reservation-code" class="form-control"
+                                   value="">
+                        </div>
+                        <input type="submit" class="btn btn-success pull-right" value="Accept Order">
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label>Response Message:</label>
+                        <span class="response-message"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Result:</label>
+                        <span class="result"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="reject-joker" class="tab-pane fade in">
+                <div class="col-md-12">
+                    <form class="form-reject-joker-offer">
+                        <div class="form-group">
+                            <label>Offer Id: </label>
+                            <input type="text" id="reject-joker-offer-id" class="form-control" value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Reservation Code: </label>
+                            <input type="text" id="reject-joker-offer-reservation-code" class="form-control"
+                                   value="">
+                        </div>
+                        <input type="submit" class="btn btn-success pull-right" value="Reject Offer">
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label>Response Message:</label>
+                        <span class="response-message"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Result:</label>
+                        <span class="result"></span>
+                    </div>
+                </div>
+            </div>
+            <div id="complete-order" class="tab-pane fade in">
+                <div class="col-md-12">
+                    <form class="form-complete-joker-offer">
+                        <div class="form-group">
+                            <label>Restaurant Unique Key: </label>
+                            <input type="text" id="complete-order-restaurant-unique-key" class="form-control"
+                                   value="">
+                        </div>
+                        <div class="form-group">
+                            <label>Order Unique Key: </label>
+                            <input type="text" id="complete-order-order-unique-key" class="form-control"
+                                   value="">
+                        </div>
+                        <input type="submit" class="btn btn-success pull-right" value="Complete Order">
+                    </form>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-6">
+                        <label>Response Message:</label>
+                        <span class="response-message"></span>
+                    </div>
+                    <div class="col-md-6">
+                        <label>Result:</label>
+                        <span class="result"></span>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    <div class="col-md-4">
+        <h4>Default Parameters</h4>
 
+        <div class="col-md-12">
+            <div class="control-group">
+                <div class="form-group">
+                    <label>Token: </label>
+                    <input type="text" id="token" class="form-control"
+                           value="eyJBcGlLZXkiOiJ5c19hcGkiLCJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJVc2VyTmFtZSI6Im1lcnRvenRla2luIiwiQ2hhbm5lbE5hbWUiOiJZUy5NVkMiLCJDdWx0dXJlIjoidHItVFIiLCJUaW1lWm9uZSI6IkV1cm9wZS9CZXJsaW4iLCJleHAiOiIxNDY0NTAyMDAyIn0.ZaHwtUfUsfyS3AEmwLf-NRT-5i3SzuPDsyhHAGgsJpc">
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 </body>
