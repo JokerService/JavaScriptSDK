@@ -67,7 +67,29 @@ $(document).ready(function () {
 
         });
     });
+
+
+    getJsFileWithAjax("js/source/get-new-joker-offer.js", $('.new-joker-offer-code-area'));
+    getJsFileWithAjax("js/source/get-current-joker-offer.js", $('.current-joker-code-area'));
+    getJsFileWithAjax("js/source/accept-joker-offer.js", $('.accept-joker-code-area'));
+    getJsFileWithAjax("js/source/reject-joker-offer.js", $('.reject-joker-code-area'));
+    getJsFileWithAjax("js/source/complete-order.js", $('.complete-order-code-area'));
 });
+
+function getJsFileWithAjax(filePath, aceContainer) {
+    //aceContainer.css("width", "1000px");
+    $.ajax({
+        type: "GET",
+        url: filePath,
+        dataType: 'text',
+        success: function (data) {
+            aceContainer.val(data).ace({theme: 'twilight', lang: 'javascript', width: '100%'})
+        },
+        error: function (e) {
+            aceContainer.val(e.responseText).ace({theme: 'twilight', lang: 'javascript'})
+        }
+    });
+}
 
 
 var jaasExample = {};

@@ -33,7 +33,7 @@
 }
 
 #app .main-container .navbar {
-    background-color:#ab0012 ;
+    background-color:#2b3643 ;
     border:none;
     border-radius: 0;
     padding: 7px;
@@ -173,4 +173,8 @@
 #app .container .row .confirm p {
     color:#ffffff;
     font-weight: bold;
+}
+
+.nav-tabs>li>a{
+    color:#2b3643 !important;
 }
