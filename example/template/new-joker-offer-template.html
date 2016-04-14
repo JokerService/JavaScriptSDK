@@ -1,0 +1,31 @@
+<div class="col-md-12">
+    <div class="col-md-6">
+        <label> Message: {{Message}}</label>
+    </div>
+    <div class="col-md-6">
+        <label> Status: {{Status}}</label>
+    </div>
+
+    <table class="table table-responsive table-bordered">
+        <tr>
+            <th>Offer Id</th>
+            <th>Reservation Code</th>
+            <th>Reservation Status</th>
+            <th>Restaurant Name</th>
+            <th>Restaurant Unique Key</th>
+            <th>Actions</th>
+        </tr>
+        {{#OfferItems}}
+        <tr>
+            <td>{{OfferId}}</td>
+            <td>{{ReservationCode}}</td>
+            <td>{{ReservationStatusText}}</td>
+            <td>{{Restaurant.Name}}</td>
+            <td>{{Restaurant.UniqueKey}}</td>
+            <td><button type="button" class="btn btn-success" onclick="sendToApprove({{OfferId}},{{ReservationCode}});"><span class="glyphicon glyphicon-ok"></span></button>
+                <button type="button" class="btn btn-danger" onclick="sendToReject({{OfferId}},{{ReservationCode}});"><span class="glyphicon glyphicon-remove"></span></button>
+            </td>
+        </tr>
+        {{/OfferItems}}
+    </table>
+</div>

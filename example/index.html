@@ -16,13 +16,15 @@
     <script type="text/javascript" src="plugin/ace/theme-twilight.js"></script>
     <script type="text/javascript" src="plugin/ace/mode-javascript.js"></script>
     <script type="text/javascript" src="js/jquery-ace.min.js"></script>
+
+    <script type="text/javascript" src="plugin/mustache/mustache.js"></script>
 </head>
 <body>
 <div id="app">
     <div class="main-container">
         <nav class="navbar navbar-default" role="navigation">
             <div class="container">
-                <div class="row"><a href="#/" class="logo">Jaas SDK</a></div>
+                <div class="row"><a href="#/" class="logo">Jaas JavaScript SDK</a></div>
             </div>
         </nav>
         <div class="container">
@@ -42,7 +44,7 @@
                         </div>
                     </div>
                     <div class="col-md-12">
-                        <ul class="nav nav-tabs __web-inspector-hide-shortcut__">
+                        <ul class="nav nav-tabs">
                             <li class="active"><a data-toggle="pill" href="#get-joker-offer">Get new joker offer</a>
                             </li>
                             <li class=""><a data-toggle="pill" href="#current-joker">Get current joker offer</a></li>
@@ -70,6 +72,17 @@
                                 </form>
                             </div>
                             <div class="col-md-12">
+                                <div id="get-joker-offer-result-container" class="hidden">
+                                    <h4>Result</h4>
+
+                                    <div id="get-joker-offer-result-body">
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Example Code</h4>
                             <textarea class="new-joker-offer-code-area" rows="4"
                                       style="height: 500px; width: 100%;"></textarea>
                             </div>
@@ -85,7 +98,18 @@
                                     <button type="submit" class="btn btn-success next">Get Current Joker Offer</button>
                                 </form>
                             </div>
+
                             <div class="col-md-12">
+                                <div id="get-current-joker-offer-result-container" class="hidden">
+                                    <h4>Result</h4>
+
+                                    <div id="get-current-joker-offer-result-body">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Example Code</h4>
                                 <textarea class="current-joker-code-area" rows="4"
                                           style="height: 500px; width: 100%;"></textarea>
                             </div>
@@ -119,6 +143,16 @@
                                 </form>
                             </div>
                             <div class="col-md-12">
+                                <div id="accept-joker-offer-result-container" class="hidden">
+                                    <h4>Result</h4>
+
+                                    <div id="accept-joker-offer-result-body">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Example Code</h4>
                             <textarea class="accept-joker-code-area" rows="4"
                                       style="height: 500px; width: 100%;"></textarea>
                             </div>
@@ -151,6 +185,15 @@
                                 </form>
                             </div>
                             <div class="col-md-12">
+                                <div id="reject-joker-offer-result-container" class="hidden">
+                                    <h4>Result</h4>
+                                    <div id="reject-joker-offer-result-body">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Example Code</h4>
                             <textarea class="reject-joker-code-area" rows="4"
                                       style="height: 500px; width: 100%;"></textarea>
                             </div>
@@ -183,6 +226,15 @@
                                 </form>
                             </div>
                             <div class="col-md-12">
+                                <div id="complete-order-result-container" class="hidden">
+                                    <h4>Result</h4>
+                                    <div id="complete-order-result-body">
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-12">
+                                <h4>Example Code</h4>
                             <textarea class="complete-order-code-area" rows="4"
                                       style="height: 500px; width: 100%;"></textarea>
                             </div>

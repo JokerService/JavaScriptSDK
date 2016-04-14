@@ -15,8 +15,20 @@ $(document).ready(function () {
         e.preventDefault();
         var token = getTokenFromDom();
         var formData = $(this).serializeObject();
-        jaasApi.getJokerOffer(token, formData.restaurantUniqueKeys, function (data) {
-            console.log(data);
+
+        var resultContainer = $("#get-joker-offer-result-container");
+        resultContainer.addClass("hidden");
+        var resultBody = $("#get-joker-offer-result-body");
+        resultBody.html('');
+
+        jaasApi.getJokerOffer(token, formData.restaurantUniqueKeys.split(','), function (data) {
+            var offerData = data.data.Result;
+            if (offerData == undefined)
+                offerData = {};
+            offerData.Status = data.status;
+            offerData.Message = data.data.Message;
+            getHtmlFileAndRenderTemplate("template/new-joker-offer-template.html", offerData, resultBody);
+            resultContainer.removeClass("hidden");
         }, function (error) {
 
         });
@@ -25,8 +37,20 @@ $(document).ready(function () {
     $("#frm_get_current_joker_offer").submit(function (e) {
         e.preventDefault();
         var token = getTokenFromDom();
+
+        var resultContainer = $("#get-current-joker-offer-result-container");
+        resultContainer.addClass("hidden");
+        var resultBody = $("#get-current-joker-offer-result-body");
+        resultBody.html('');
+
         jaasApi.getCurrentJokerOffer(token, function (data) {
-            console.log(data);
+            var offerData = data.data.Result;
+            if (offerData == undefined)
+                offerData = {};
+            offerData.Status = data.status;
+            offerData.Message = data.data.Message;
+            getHtmlFileAndRenderTemplate("template/new-joker-offer-template.html", offerData, resultBody);
+            resultContainer.removeClass("hidden");
         }, function (error) {
 
         });
@@ -37,8 +61,17 @@ $(document).ready(function () {
         e.preventDefault();
         var token = getTokenFromDom();
         var formData = $(this).serializeObject();
+        var resultContainer = $("#accept-joker-offer-result-container");
+        resultContainer.addClass("hidden");
+        var resultBody = $("#accept-joker-offer-result-body");
+        resultBody.html('');
         jaasApi.acceptJoker(token, formData.offerId, formData.reservationCode, function (data) {
-            console.log(data);
+            var acceptJokerOfferData = data.data;
+            if (acceptJokerOfferData == undefined)
+                acceptJokerOfferData = {};
+            acceptJokerOfferData.Status = data.status;
+            getHtmlFileAndRenderTemplate("template/common-response-template.html", acceptJokerOfferData, resultBody);
+            resultContainer.removeClass("hidden");
         }, function (error) {
 
         });
@@ -49,8 +82,18 @@ $(document).ready(function () {
         e.preventDefault();
         var token = getTokenFromDom();
         var formData = $(this).serializeObject();
+
+        var resultContainer = $("#reject-joker-offer-result-container");
+        resultContainer.addClass("hidden");
+        var resultBody = $("#reject-joker-offer-result-body");
+        resultBody.html('');
         jaasApi.rejectJoker(token, formData.offerId, formData.reservationCode, function (data) {
-            console.log(data);
+            var rejectJokerOfferData = data.data;
+            if (rejectJokerOfferData == undefined)
+                rejectJokerOfferData = {};
+            rejectJokerOfferData.Status = data.status;
+            getHtmlFileAndRenderTemplate("template/common-response-template.html", rejectJokerOfferData, resultBody);
+            resultContainer.removeClass("hidden");
         }, function (error) {
 
         });
@@ -61,8 +104,20 @@ $(document).ready(function () {
         var token = getTokenFromDom();
         var formData = $(this).serializeObject();
         var orderDateUtc = new Date().toISOString();
+
+        var resultContainer = $("#complete-order-result-container");
+        resultContainer.addClass("hidden");
+        var resultBody = $("#complete-order-result-body");
+        resultBody.html('');
+
         jaasApi.completeOrder(token, formData.restaurantUniqueKey, formData.orderUniqueKey, orderDateUtc, function (data) {
-            console.log(data);
+            var completeOrderData = data.data;
+            if (completeOrderData == undefined)
+                completeOrderData = {};
+            completeOrderData.Status = data.status;
+            getHtmlFileAndRenderTemplate("template/common-response-template.html", completeOrderData, resultBody);
+            resultContainer.removeClass("hidden");
+
         }, function (error) {
 
         });
@@ -76,8 +131,18 @@ $(document).ready(function () {
     getJsFileWithAjax("js/source/complete-order.js", $('.complete-order-code-area'));
 });
 
+
+function sendToApprove(offerId, reservationCode) {
+    $("input[name='offerId']").val(offerId);
+    $("input[name='reservationCode']").val(reservationCode);
+    activeTab("accept-joker");
+};
+function sendToReject(offerId, reservationCode) {
+    $("input[name='offerId']").val(offerId);
+    $("input[name='reservationCode']").val(reservationCode);
+    activeTab("reject-joker");
+};
 function getJsFileWithAjax(filePath, aceContainer) {
-    //aceContainer.css("width", "1000px");
     $.ajax({
         type: "GET",
         url: filePath,
@@ -91,9 +156,21 @@ function getJsFileWithAjax(filePath, aceContainer) {
     });
 }
 
+function getHtmlFileAndRenderTemplate(fileName, data, container) {
+    $.ajax({
+        type: "GET",
+        url: fileName,
+        dataType: 'text',
+        success: function (templateData) {
+            var output = Mustache.render(templateData, data);
+            container.html(output);
+        },
+        error: function (e) {
+        }
+    });
+}
 
-var jaasExample = {};
-jaasExample.activeTab = function (tab) {
+function activeTab(tab) {
     $('.nav-tabs a[href="#' + tab + '"]').tab('show');
 };
 

@@ -50,7 +50,7 @@
     padding-bottom: 15px;
 }
 #app .main-container .navbar .logo {
-    width: 335px;
+
     height: 36px;
     background: url("../images/logo.png") 0 0 no-repeat;
     padding: 7px 5px 5px 200px;
@@ -177,4 +177,14 @@
 
 .nav-tabs>li>a{
     color:#2b3643 !important;
+}
+.nav-tabs {
+    padding-left: 15px;
+    margin-bottom: 0;
+    border: none;
+}
+.tab-content {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 15px;
 }
