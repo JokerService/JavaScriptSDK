@@ -1,0 +1,176 @@
+/*Form Wizard*/
+.bs-wizard {border-bottom: solid 1px #e0e0e0; padding: 0 0 10px 0;}
+.bs-wizard > .bs-wizard-step {padding: 0; position: relative;}
+.bs-wizard > .bs-wizard-step + .bs-wizard-step {}
+.bs-wizard > .bs-wizard-step .bs-wizard-stepnum {color: #595959; font-size: 16px; margin-bottom: 5px;}
+.bs-wizard > .bs-wizard-step .bs-wizard-info {color: #999999; font-size: 14px;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot {position: absolute; width: 30px; height: 30px; display: block; background: #5cb85c; top: 45px; left: 50%; margin-top: -15px; margin-left: -15px; border-radius: 50%;}
+.bs-wizard > .bs-wizard-step > .bs-wizard-dot:after {content: ' '; width: 14px; height: 14px; background: #3e883e; border-radius: 50px; position: absolute; top: 8px; left: 8px; }
+.bs-wizard > .bs-wizard-step > .progress {position: relative; border-radius: 0px; height: 8px; box-shadow: none; margin: 20px 0;}
+.bs-wizard > .bs-wizard-step > .progress > .progress-bar {width:0px; box-shadow: none; background: #5cb85c;}
+.bs-wizard > .bs-wizard-step.complete > .progress > .progress-bar {width:100%;}
+.bs-wizard > .bs-wizard-step.active > .progress > .progress-bar {width:50%;}
+.bs-wizard > .bs-wizard-step:first-child.active > .progress > .progress-bar {width:0%;}
+.bs-wizard > .bs-wizard-step:last-child.active > .progress > .progress-bar {width: 100%;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot {background-color: #999999;}
+.bs-wizard > .bs-wizard-step.disabled > .bs-wizard-dot:after {opacity: 0;}
+.bs-wizard > .bs-wizard-step:first-child  > .progress {left: 50%; width: 50%;}
+.bs-wizard > .bs-wizard-step:last-child  > .progress {width: 50%;}
+.bs-wizard > .bs-wizard-step.disabled a.bs-wizard-dot{ pointer-events: none; }
+.bs-wizard .progress {background-color: #999999;}
+/*END Form Wizard*/
+
+@media (max-width: 992px) {
+    .bs-wizard{
+        display: none;
+    }
+    #app .container .row.image .formGroup .form-group input{
+        margin: 0;
+    }
+    #app .container .row.image .formGroup .form-group img{
+        margin-right: 10px;
+    }
+}
+
+#app .main-container .navbar {
+    background-color:#ab0012 ;
+    border:none;
+    border-radius: 0;
+    padding: 7px;
+    margin-bottom: 0;
+}
+#app .main-container>.container {
+    background-color:#FAFAFA ;
+    border: solid 1px #dddddd;
+}
+#app .container .row h2{
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: solid 1px #dddddd;
+    padding-bottom: 15px;
+}
+#app .main-container .navbar .logo {
+    width: 335px;
+    height: 36px;
+    background: url("../images/logo.png") 0 0 no-repeat;
+    padding: 7px 5px 5px 200px;
+    color:#FFFFFF;
+    display: block;
+}
+#app .container .row .info {
+    text-align: center;
+}
+#app .container .row .four .markaTescil {
+    text-align: center;
+}
+#app .container .row .info .video{
+    width: 100%;
+    margin-bottom: 20px;
+}
+#app .container .row .info .video iframe{
+    border:none;
+}
+#app .container .row button{
+    font-weight: bold;
+    margin-bottom: 40px;
+    padding: 10px 16px;
+}
+#app .container .row .five .btn-danger{
+    margin-bottom: 0;
+}
+#app .container .row .five .btn-default{
+    margin-bottom: 0;
+}
+#app .container .row .info ul li{
+    text-align: left;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+#app .container .row .next{
+    float: right;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+#app .container .row .prev{
+    float: left;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+#app .container .row .document{
+    float: right;
+    font-weight: bold;
+}
+#app .container .row .one .btn-info{
+    margin-right: 10px;
+}
+#app .container .row .form-horizontal .formGroup{
+    background-color: #F2F2F2;
+    padding: 10px 25px 25px 25px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: solid 1px #dddddd;
+}
+#app .container .row .form-horizontal .formGroup.restaurantName{
+    padding: 10px 25px 5px 25px;
+}
+#app .container .row .form-horizontal .formGroup .subject{
+    color: #ab0012;
+    text-align: center;
+    font-size: 18px;
+}
+#app .container .row .form-horizontal .formGroup .form-group .col-sm-10{
+    padding: 0 30px;
+}
+#app .container .row .three .table caption{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color:#ab0012;
+}
+
+#app .container .row .allCheckbox .checkbox-inline{
+    width: 100%;
+    margin: 0 20px;
+}
+#app .container .row .addArea{
+    float:right;
+}
+#app .container .row.image .formGroup {
+    padding:10px 15px 15px 15px;
+}
+#app .container .row.image .formGroup .form-group {
+    float: inherit;
+    margin-bottom: 0;
+    padding-right: 0;
+}
+#app .container .row.image .formGroup .form-group input {
+    margin: 30px 0;
+}
+#app .container .row.image .formGroup .form-group img {
+    float: right;
+    width: 20%;
+    border: solid 1px #6c6c6c;
+    padding: 0;
+}
+#app .form-control-feedback{
+    display: none;
+}
+#app .has-error .glyphicon-remove {
+    display: block;
+}
+#app .has-success .glyphicon-ok{
+    display: block;
+}
+#app .container .row .confirm .jumbotron {
+    text-align: center;
+    background-color:#5cb85c;
+}
+#app .container .row .confirm .glyphicon {
+    font-size: 160px;
+    color:#ffffff;
+    margin-bottom: 30px;
+}
+#app .container .row .confirm p {
+    color:#ffffff;
+    font-weight: bold;
+}
