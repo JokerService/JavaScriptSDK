@@ -1,5 +1,7 @@
 /**
- * Created by jaws
+ * Created by jaws 
+ * v1.0
+ * <script type="text/javascript" src="http://cdn.apihero.io/jaas/js/v1/jaws-sdk.min.js"></script>
  */
 
 if (jaasApi !== undefined) {
